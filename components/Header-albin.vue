@@ -2,7 +2,7 @@
   <section class="header">
     <div class="align-left">
       <div class="logo to-top">
-        <img src="/img/logo.png" alt="">
+        <img :src="'./img/logo.png'" alt="">
       </div>
       <ul class="nav">
         <li>О нас</li>

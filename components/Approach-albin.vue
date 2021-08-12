@@ -1,7 +1,7 @@
 <template>
   <section class="approach">
     <div class="circle">
-      <img src="/img/shame_on_me.png" alt="">
+      <img :src="'./img/shame_on_me.png'" alt="">
     </div>
     <div class="align-left">
       <h3>
