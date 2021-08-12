@@ -1,0 +1,174 @@
+<template>
+  <section class="work">
+    <h2>OUR WORK</h2>
+    <hr>
+    <div class="content row">
+      <div class="sidebar">
+        <ul>
+          <li @click="changeActive('chosenPhoto')" id="chosen_photo" :class="status.chosenPhoto ?'active':''"><span>Избранные фото</span>
+          </li>
+          <li @click="changeActive('chosenVideo')" id="chosen_video" :class="status.chosenVideo ?'active':''"><span>Избранные видео</span>
+          </li>
+          <li @click="changeActive('ads')" id="ads" :class="status.ads ?'active':''"><span>Рекламные ролики</span></li>
+          <li @click="changeActive('teaser')" id="teaser" :class="status.teaser ?'active':''"><span>Тизеры</span></li>
+          <li @click="changeActive('reportage')" id="reportage" :class="status.reportage ?'active':''"><span>Репортажные сьемки</span>
+          </li>
+          <li @click="changeActive('marriage')" id="marriage" :class="status.marriage ?'active':''"><span>Свадебные сьемки</span>
+          </li>
+        </ul>
+      </div>
+      <div class="promo">
+        <div v-if="status.chosenPhoto" class="photo">
+          <img :src="photos[2]" alt="" class="main">
+          <img :src="photos[4]" alt="" class="side">
+          <img :src="photos[0]" alt="" class="side">
+        </div>
+        <div v-if="!status.chosenPhoto" class="video">
+          <iframe height="560" :src="video[active]" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen/>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</template>
+
+<script>
+export default {
+  name: "Work-albin",
+  data: function () {
+    return {
+      active: 'chosenPhoto',
+      status: {
+        chosenPhoto: true,
+        chosenVideo: false,
+        ads: false,
+        teaser: false,
+        reportage: false,
+        marriage: false
+      },
+      video: {
+        chosenVideo: 'https://www.youtube.com/embed/k85mRPqvMbE',
+        ads: 'https://www.youtube.com/embed/uelHwf8o7_U',
+        teaser: "https://www.youtube.com/embed/IcrbM1l_BoI",
+        reportage: 'https://www.youtube.com/embed/zRIbf6JqkNc',
+        marriage: 'https://www.youtube.com/embed/ZaI2IlHwmgQ'
+      },
+      photos: [
+        './img/red_banner.jpg',
+        './img/tmp/ABC_6995.JPG',
+        './img/tmp/ABC_6998.JPG',
+        './img/tmp/ABC_6996.JPG',
+        './img/tmp/ABC_7010.JPG',
+        './img/tmp/ABC_7023.JPG'
+      ]
+
+    }
+  },
+  methods: {
+    changeActive: function (message) {
+      this.status[message] = true;
+      this.status[this.active] = false;
+      this.active = message;
+    }
+  },
+}
+</script>
+
+<style scoped lang="scss">
+
+.work {
+  margin: 70px 0;
+}
+
+h2 {
+  font-family: Orbitron, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 120%;
+  color: $red;
+}
+
+hr {
+  width: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: solid 1px $red;
+}
+
+.content {
+
+  .sidebar {
+
+    ul {
+      width: 200px;
+
+      & .active {
+        list-style-image: url("/img/ArrowRight.png");
+        margin-left: 30px;
+      }
+
+      li {
+        cursor: pointer;
+        margin-bottom: 30px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      .active span {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+
+  }
+
+  .promo {
+    margin-left: 216px;
+    width: 100%;
+
+    .photo {
+      display: flex;
+      flex-wrap: nowrap;
+
+
+      img {
+        background: gray;
+      }
+
+      .main {
+        width: 40%;
+        height: max-content;
+      }
+
+      .side {
+        width: 25%;
+        height: 300px;
+        margin-left: 5%;
+        object-fit: cover;
+      }
+    }
+
+    .video {
+      width: 100%;
+      iframe {
+        width: 100%;
+        height: 560px;
+      }
+    }
+  }
+
+
+}
+</style>

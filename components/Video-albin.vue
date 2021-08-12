@@ -1,0 +1,26 @@
+<template>
+  <section class="video">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen/>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "Video-albin"
+}
+</script>
+
+<style scoped lang="scss">
+.video {
+
+  margin: 150px;
+
+  iframe {
+    width: 100%;
+    height: 560px;
+  }
+}
+</style>
