@@ -1,7 +1,7 @@
 <template>
   <section class="footer">
     <div class="wrapper row">
-      <img src="/img/logo.png" alt="" class="logo">
+      <img src="./img/logo.png" alt="" class="logo">
       <div class="site-links">
         <ul>
           <li>О нас</li>

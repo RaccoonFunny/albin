@@ -1,7 +1,7 @@
 <template>
   <section class="contact row">
     <div class="circle">
-      <img src="/img/shame_on_me.png" alt="">
+      <img src="./img/shame_on_me.png" alt="">
     </div>
     <div class="align-left">
       <h3>
@@ -37,10 +37,10 @@
           </p>
         </div>
       </div>
-      <img src="/img/red_banner.jpg" alt="">
+      <img src="./img/red_banner.jpg" alt="">
     </div>
     <div class="align-right">
-      <img src="/img/red_banner.jpg" alt="">
+      <img src="./img/red_banner.jpg" alt="">
       <form action="formAction.php">
         <label class="form-explain">
           Если у вас есть вопросы, свяжитесь с нами

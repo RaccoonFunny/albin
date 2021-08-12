@@ -1,7 +1,7 @@
 <template>
   <section class="banner">
     <div class="circle">
-      <img src="/img/shame_on_me.png" alt="">
+      <img src="./img/shame_on_me.png" alt="">
     </div>
     <div class="content">
       <div class="align-left">
@@ -20,7 +20,7 @@
         </button>
         <div class="row">
 
-          <img src="/img/tmp/angelua.jpg" alt="" class="under-btn">
+          <img src="./img/tmp/angelua.jpg" alt="" class="under-btn">
 
           <div class="carousel-arrows">
             <p class="counter">
