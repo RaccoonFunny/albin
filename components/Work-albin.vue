@@ -119,7 +119,7 @@ hr {
       width: 200px;
 
       & .active {
-        list-style-image: url("./img/ArrowRight.png");
+        list-style-image: url("/img/ArrowRight.png");
         margin-left: 30px;
         @media screen and (max-width: 400px) {
           & {
