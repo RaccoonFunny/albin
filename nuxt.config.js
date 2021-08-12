@@ -1,4 +1,10 @@
 export default {
+  target: 'static',
+
+  router: {
+    base: '/albin/'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Фотостудия Albin team studio, фото/видео съёмка',

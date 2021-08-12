@@ -96,6 +96,12 @@ export default {
   display: flex;
   flex-wrap: nowrap;
 
+  @media screen and (max-width: 400px) {
+    & {
+      display: block;
+    }
+  }
+
   .align-left {
     width: 780px;
 
@@ -108,11 +114,24 @@ export default {
         font-weight: bold;
         font-size: 70px;
         color: $red;
+
+        @media screen and (max-width: 400px) {
+          & {
+            font-size: 30px;
+          }
+        }
       }
 
       span {
         margin-left: 190px;
+
+        @media screen and (max-width: 400px) {
+          & {
+            margin-left: 50px;
+          }
+        }
       }
+
       .padding {
         width: 190px;
       }
@@ -129,6 +148,14 @@ export default {
       width: 552px;
       height: 50px;
       margin-top: 35px;
+
+      @media screen and (max-width: 400px) {
+        & {
+          margin-left: 50px;
+          width: 267px;
+          height: max-content;
+        }
+      }
     }
 
     .order-btn {
@@ -138,6 +165,14 @@ export default {
       border: 2px solid $red;
       background: none;
       box-sizing: border-box;
+
+
+      @media screen and (max-width: 400px) {
+        & {
+          margin-left: 50px;
+          width: 200px;
+        }
+      }
     }
 
     .under-btn {
@@ -146,6 +181,11 @@ export default {
       background: gray;
       margin-left: 190px;
       object-fit: cover;
+      @media screen and (max-width: 400px) {
+        & {
+          display: none;
+        }
+      }
     }
 
     .carousel-arrows {
@@ -160,6 +200,12 @@ export default {
       font-weight: normal;
       font-size: 14px;
       line-height: 140%;
+
+      @media screen and (max-width: 400px) {
+        & {
+          margin: 0;
+        }
+      }
 
       .title {
         margin-top: 21px;
@@ -199,6 +245,14 @@ export default {
       position: relative;
       z-index: 5;
       object-fit:cover;
+
+      @media screen and (max-width: 400px) {
+        & {
+          width: 70%;
+          margin: 10px auto;
+          height: max-content;
+        }
+      }
     }
   }
 }

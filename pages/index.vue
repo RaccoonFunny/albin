@@ -44,4 +44,15 @@ export default {
     margin: 0 auto;
   }
 }
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 14px;
+  }
+
+  .wrapper {
+    width: 340px;
+    margin: 0 auto;
+  }
+}
 </style>

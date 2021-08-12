@@ -90,6 +90,12 @@ h2 {
   font-size: 70px;
   line-height: 120%;
   color: $red;
+
+  @media screen and (max-width: 400px) {
+    & {
+      font-size: 30px;
+    }
+  }
 }
 
 hr {
@@ -97,6 +103,12 @@ hr {
   margin-top: 50px;
   margin-bottom: 50px;
   border: solid 1px $red;
+
+  @media screen and (max-width: 400px) {
+    & {
+      display: none;
+    }
+  }
 }
 
 .content {
@@ -109,6 +121,12 @@ hr {
       & .active {
         list-style-image: url("/img/ArrowRight.png");
         margin-left: 30px;
+        @media screen and (max-width: 400px) {
+          & {
+            list-style-image: none;
+            margin-left: 0;
+          }
+        }
       }
 
       li {
