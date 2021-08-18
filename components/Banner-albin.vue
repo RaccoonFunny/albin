@@ -55,7 +55,7 @@ export default {
   data: function () {
     return {
       current: '1',
-      giant: ['./img/red_banner.jpg','./img/tmp/ABC_6995.JPG',"./img/tmp/ABC_6998.JPG","./img/tmp/ABC_6996.JPG","./img/tmp/ABC_7010.JPG", "./img/tmp/ABC_7023.JPG"]
+      giant: ['https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg','./img/tmp/ABC_6995.JPG',"./img/tmp/ABC_6998.JPG","./img/tmp/ABC_6996.JPG","./img/tmp/ABC_7010.JPG", "./img/tmp/ABC_7023.JPG"]
     }
   },
   computed: {

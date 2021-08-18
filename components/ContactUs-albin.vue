@@ -37,10 +37,10 @@
           </p>
         </div>
       </div>
-      <img :src="'./img/red_banner.jpg'" alt="">
+      <img :src="'https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg'" alt="">
     </div>
     <div class="align-right">
-      <img :src="'./img/red_banner.jpg'" alt="">
+      <img :src="'https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg'" alt="">
       <form action="formAction.php">
         <label class="form-explain">
           Если у вас есть вопросы, свяжитесь с нами
