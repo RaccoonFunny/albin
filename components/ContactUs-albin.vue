@@ -1,7 +1,7 @@
 <template>
-  <section class="contact row">
+  <section class="contact row" id="contact">
     <div class="circle">
-      <img :src="'./img/shame_on_me.png'" alt="">
+      <img :src="'./img/shame_on_me.svg'" alt="">
     </div>
     <div class="align-left">
       <h3>
@@ -78,12 +78,15 @@ export default {
 
 .circle {
   position: absolute;
-  right: 40%;
+  right: 20%;
+  top: 45%;
   animation: rotateCircle 10s infinite linear;
 }
 
 .contact {
   margin-bottom: 100px;
+  flex-direction: column;
+  position: relative;
 }
 
 .align-left {
@@ -96,19 +99,40 @@ export default {
       font-weight: bold;
       font-size: 70px;
       color: $red;
-    }
 
-    span {
-      margin-left: 190px;
+      span {
+        margin-left: $gridGap;
+        @media screen and (max-width: 771px) {
+          & {
+            margin-left: $gridGap770;
+          }
+        }
+      }
+
+      @media screen and (max-width: 771px) {
+        & {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 30px;
+          line-height: 120%;
+        }
+      }
     }
   }
-  .our-contact{
+
+  .our-contact {
     margin-top: 70px;
-    margin-left: 190px;
+    margin-left: $gridGap;
+    @media screen and (max-width: 771px) {
+      & {
+        margin-left: $gridGap770;
+      }
+    }
     display: flex;
 
     .sources {
       width: 100px;
+
       p {
         color: #929292;
       }
@@ -117,27 +141,55 @@ export default {
     .links {
       a {
         margin-right: 50px;
+
+        @media screen and (max-width: 771px) {
+          & {
+            margin-right: 20px;
+          }
+        }
       }
     }
 
-    .sources p, .links p{
+    .sources p, .links p {
       font-style: normal;
       font-weight: normal;
       font-size: 16px;
       line-height: 140%;
       margin-bottom: 30px;
+
+      @media screen and (max-width: 771px) {
+        & {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 140%;
+        }
+      }
     }
   }
+
   img {
     width: 380px;
     height: 500px;
     object-fit: cover;
-    margin-left: 190px;
+    margin-left: $gridGap;
+    @media screen and (max-width: 771px) {
+      & {
+        margin-left: $gridGap770 * 2;
+        width: 70%;
+        height: 290px;
+      }
+    }
   }
 }
 
 .align-right {
   margin-left: 120px;
+  @media screen and (max-width: 771px) {
+    & {
+      margin-left: 0;
+    }
+  }
 
   img {
     margin-top: 75px;
@@ -146,6 +198,14 @@ export default {
     object-fit: cover;
     position: relative;
     z-index: 10;
+
+    @media screen and (max-width: 771px) {
+      & {
+        margin-top: 30px;
+        width: 70%;
+        height: 290px;
+      }
+    }
   }
 
   form {

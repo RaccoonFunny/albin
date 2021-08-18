@@ -1,5 +1,5 @@
 <template>
-  <section class="work">
+  <section class="work" id="work">
     <h2>OUR WORK</h2>
     <hr>
     <div class="content row">
@@ -25,7 +25,6 @@
         </div>
         <div v-if="!status.chosenPhoto" class="video">
           <iframe height="560" :src="video[active]" title="YouTube video player"
-                  frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen/>
         </div>
@@ -79,6 +78,12 @@ export default {
 
 <style scoped lang="scss">
 
+@media screen and (max-width: 770px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
 .work {
   margin: 70px 0;
 }
@@ -91,9 +96,12 @@ h2 {
   line-height: 120%;
   color: $red;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 771px) {
     & {
+      font-style: normal;
+      font-weight: bold;
       font-size: 30px;
+      line-height: 120%;
     }
   }
 }
@@ -104,7 +112,7 @@ hr {
   margin-bottom: 50px;
   border: solid 1px $red;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 771px) {
     & {
       display: none;
     }
@@ -115,13 +123,28 @@ hr {
 
   .sidebar {
 
+    @media screen and (max-width: 771px) {
+      & {
+        width: 100%;
+        overflow-x: scroll;
+      }
+    }
+
     ul {
       width: 200px;
+
+      @media screen and (max-width: 771px) {
+        & {
+          display: flex;
+          gap: 20px;
+          width: max-content;
+        }
+      }
 
       & .active {
         list-style-image: url("/img/ArrowRight.png");
         margin-left: 30px;
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 771px) {
           & {
             list-style-image: none;
             margin-left: 0;
@@ -156,6 +179,23 @@ hr {
     margin-left: 216px;
     width: 100%;
 
+    @media screen and (max-width: 771px) {
+      & {
+        margin-left: 0;
+      }
+
+      .photo {
+        width: 100%;
+        overflow-x: scroll;
+      }
+
+      .main, .side {
+        width: 265px !important;
+        height: 404px !important;
+        object-fit: cover;
+      }
+    }
+
     .photo {
       display: flex;
       flex-wrap: nowrap;
@@ -168,6 +208,7 @@ hr {
       .main {
         width: 40%;
         height: max-content;
+        object-fit: cover;
       }
 
       .side {

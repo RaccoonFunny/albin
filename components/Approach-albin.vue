@@ -1,7 +1,7 @@
 <template>
   <section class="approach">
     <div class="circle">
-      <img :src="'./img/shame_on_me.png'" alt="">
+      <img :src="'./img/shame_on_me.svg'" alt="">
     </div>
     <div class="align-left">
       <h3>
@@ -63,15 +63,32 @@ export default {
   position: absolute;
   right: 10%;
   animation: rotateCircle 10s infinite linear;
+  @media screen and (max-width: 771px) {
+    & {
+      top: 100vh;
+      right: 40px;
+    }
+  }
 }
 
 .approach {
   display: flex;
+  position: relative;
   margin-bottom: 150px;
+  @media screen and (max-width: 771px) {
+    & {
+      flex-direction: column;
+    }
+  }
 }
 
 .align-left {
   width: 60%;
+  @media screen and (max-width: 771px) {
+    & {
+      width: 100%;
+    }
+  }
 
   h3 {
     margin-bottom: 70px;
@@ -82,10 +99,24 @@ export default {
       font-weight: bold;
       font-size: 70px;
       color: $red;
+
+      @media screen and (max-width: 771px) {
+        & {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 30px;
+          line-height: 120%;
+        }
+      }
     }
 
     span {
-      margin-left: 190px;
+      margin-left: $gridGap;
+      @media screen and (max-width: 771px) {
+        & {
+          margin-left: $gridGap770;
+        }
+      }
     }
   }
 
@@ -96,14 +127,28 @@ export default {
     font-size: 16px;
     line-height: 140%;
     margin-bottom: 60px;
-    margin-left: 190px;
+    margin-left: $gridGap;
+    @media screen and (max-width: 771px) {
+      & {
+        margin-left: $gridGap770;
+        width: auto;
+      }
+    }
   }
 
   img {
     width: 415px;
     height: 614px;
-    margin-left: 190px;
+    margin-left: $gridGap;
     object-fit: cover;
+
+    @media screen and (max-width: 771px) {
+      & {
+        width: 80%;
+        height: 410px;
+        margin-left: $gridGap770;
+      }
+    }
   }
 }
 
@@ -115,10 +160,28 @@ export default {
     position: relative;
     z-index: 10;
     object-fit: cover;
+
+    @media screen and (max-width: 771px) {
+      & {
+        width: 80%;
+        height: 410px;
+        margin-top: 70px;
+      }
+    }
   }
 
   p {
     margin-top: 30px;
+    @media screen and (max-width: 771px) {
+      & {
+        margin-left: $gridGap770;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 140%;
+      }
+    }
   }
 }
 </style>

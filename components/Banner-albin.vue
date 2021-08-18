@@ -1,7 +1,7 @@
 <template>
-  <section class="banner">
+  <section class="banner" id="banner">
     <div class="circle">
-      <img :src="'./img/shame_on_me.png'" alt="">
+      <img :src="'./img/shame_on_me.svg'" alt="">
     </div>
     <div class="content">
       <div class="align-left">
@@ -15,7 +15,7 @@
           Креативный видеопродакшн полного цикла, Москва
           Реклама, имиджевые и корпоративные фильмы
         </p>
-        <button class="order-btn pointer">
+        <button v-scroll-to="'#contact'" class="order-btn pointer">
           Записаться на фотосессию
         </button>
         <div class="row">
@@ -46,7 +46,6 @@
         <img :src="giantSrc" alt="" class="giant">
       </div>
     </div>
-
   </section>
 </template>
 
@@ -85,19 +84,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+
+
 .circle {
   position: absolute;
+  top: 125px;
   right: 10%;
   animation: rotateCircle 10s infinite linear;
+
+  @media screen and (max-width: 776px) {
+    & {
+      right: 50px;
+      top: 80%;
+    }
+  }
 }
 
 .content {
-  padding-top: 124px;
+  padding-top: 224px;
   display: flex;
   flex-wrap: nowrap;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 776px) {
     & {
+      padding-top: 120px;
       display: block;
     }
   }
@@ -105,8 +116,20 @@ export default {
   .align-left {
     width: 780px;
 
+    @media screen and (max-width: 776px) {
+      & {
+        width: 100%;
+      }
+    }
+
     h1 {
       margin-top: 81px;
+
+      @media screen and (max-width: 776px) {
+        & {
+          margin-top: 0;
+        }
+      }
 
       span, & {
         font-family: Orbitron, sans-serif;
@@ -115,19 +138,23 @@ export default {
         font-size: 70px;
         color: $red;
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 776px) {
           & {
             font-size: 30px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 120%;
+
           }
         }
       }
 
       span {
-        margin-left: 190px;
+        margin-left: $gridGap;
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 776px) {
           & {
-            margin-left: 50px;
+            margin-left: $gridGap770;
           }
         }
       }
@@ -138,7 +165,7 @@ export default {
     }
 
     .tagline {
-      margin-left: 190px;
+      margin-left: $gridGap;
       font-family: Futura PT, sans-serif;
       font-style: normal;
       font-weight: normal;
@@ -149,11 +176,11 @@ export default {
       height: 50px;
       margin-top: 35px;
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 776px) {
         & {
           margin-left: 50px;
-          width: 267px;
           height: max-content;
+          width: calc(100% - 50px);
         }
       }
     }
@@ -167,7 +194,7 @@ export default {
       box-sizing: border-box;
 
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 776px) {
         & {
           margin-left: 50px;
           width: 200px;
@@ -179,9 +206,9 @@ export default {
       min-width: 280px;
       height: 323px;
       background: gray;
-      margin-left: 190px;
+      margin-left: $gridGap;
       object-fit: cover;
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 776px) {
         & {
           display: none;
         }
@@ -201,7 +228,7 @@ export default {
       font-size: 14px;
       line-height: 140%;
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 776px) {
         & {
           margin: 0;
         }
@@ -246,11 +273,11 @@ export default {
       z-index: 5;
       object-fit:cover;
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 776px) {
         & {
-          width: 70%;
+          height: 400px;
           margin: 10px auto;
-          height: max-content;
+          width: 300px;
         }
       }
     }

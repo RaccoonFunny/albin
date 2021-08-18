@@ -42,6 +42,14 @@ export default {
     margin-right: 92px;
     position: relative;
     top: -30px;
+
+    @media screen and (max-width: 771px) {
+      & {
+        width: 50px;
+        height: 50px;
+        margin-right: 30px;
+      }
+    }
   }
 
   .wrapper {
@@ -50,10 +58,24 @@ export default {
 
   .site-links li, .social-links li, .feedback li {
     margin-bottom: 40px;
+
+    @media screen and (max-width: 771px) {
+      & {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 140%;
+      }
+    }
   }
 
   .site-links , .social-links {
     margin-right: 150px;
+    @media screen and (max-width: 771px) {
+      & {
+        margin-right: 30px;
+      }
+    }
   }
 }
 </style>

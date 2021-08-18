@@ -18,6 +18,12 @@ export default {
 
   margin: 150px;
 
+  @media screen and (max-width: 776px) {
+    & {
+      margin: 0;
+    }
+  }
+
   iframe {
     width: 100%;
     height: 560px;

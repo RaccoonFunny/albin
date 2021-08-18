@@ -3,3 +3,21 @@ $gray : #212123;
 $red : #E60000;
 $white : #ffffff;
 
+
+/*
+@media screen and (max-width: 770px) {
+  $gridGap : 40px;
+}
+
+@media screen and (max-width: 1440px) and  (min-width: 771px){
+  $gridGap : 70px;
+}
+
+@media screen and (min-width: 1441px) {
+  $gridGap : 190px;
+}
+*/
+
+$gridGap770 : 40px;
+$gridGap1440 : 70px;
+$gridGap : 190px;

@@ -69,7 +69,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['vue-scrollto/nuxt', { duration: 300, easing: "ease", offset: -100,}],
   ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
