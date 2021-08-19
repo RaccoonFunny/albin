@@ -18,12 +18,12 @@
         </ul>
       </div>
       <div class="promo">
-        <div v-if="activeType == 'photo'" class="photo">
+        <div v-show="activeType == 'photo'" class="photo">
           <img :src="photos[active][0]" alt="" class="main">
           <img :src="photos[active][1]" alt="" class="side">
           <img :src="photos[active][2]" alt="" class="side">
         </div>
-        <div v-if="activeType == 'video' " class="video">
+        <div v-show="activeType == 'video' " class="video">
           <iframe height="560" :src="video[active]" title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen/>

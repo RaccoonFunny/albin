@@ -178,11 +178,13 @@ export default {
     height: 500px;
     object-fit: cover;
     margin-left: $gridGap;
+    position: relative;
+    z-index: 10;
     @media screen and (max-width: 771px) {
       & {
         margin-left: $gridGap770 * 2;
         width: 70%;
-        height: 290px;
+        height: 390px;
       }
     }
   }
