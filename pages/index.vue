@@ -51,7 +51,7 @@ export default {
   }
 
   .wrapper {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 0 10px;
     margin: 0 auto;
   }

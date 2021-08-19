@@ -1,5 +1,6 @@
 export default {
   target: 'server',
+  ssr: true,
 
   router: {
     base: '/albin/'
