@@ -37,21 +37,21 @@
           </p>
         </div>
       </div>
-      <img :src="'https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg'" alt="">
+      <img :src="'./img/custom/7R203643.jpg'" alt="">
     </div>
     <div class="align-right">
-      <img :src="'https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg'" alt="">
+      <img :src="'./img/custom/7R203915.jpg'" alt="">
       <form action="formAction.php">
         <label class="form-explain">
           Если у вас есть вопросы, свяжитесь с нами
         </label>
         <label>
-          <input type="text" placeholder="Имя *">
+          <input class="inputArea" type="text" name="name" placeholder="Имя *">
         </label>
         <label>
-          <input type="text" placeholder="Номер телефона *">
+          <input class="inputArea" type="text" name="tel" placeholder="Номер телефона *">
         </label>
-        <input type="submit" value="Отправить">
+        <input class="submit" type="submit" value="Отправить">
       </form>
     </div>
   </section>
@@ -85,8 +85,13 @@ export default {
 
 .contact {
   margin-bottom: 100px;
-  flex-direction: column;
   position: relative;
+
+  @media screen and (max-width: 771px) {
+    & {
+      flex-direction: column;
+    }
+  }
 }
 
 .align-left {
@@ -193,7 +198,7 @@ export default {
 
   img {
     margin-top: 75px;
-    width: 590px;
+    width: 500px;
     height: 491px;
     object-fit: cover;
     position: relative;
@@ -217,7 +222,7 @@ export default {
       margin-bottom: 30px;
     }
 
-    input[type = 'text'] {
+    .inputArea {
       width: 100%;
       background: none;
       border: none;
@@ -226,7 +231,7 @@ export default {
       padding-bottom: 20px;
     }
 
-    input[type = 'submit'] {
+    .submit {
       width: 280px;
       height: 70px;
       font-style: normal;

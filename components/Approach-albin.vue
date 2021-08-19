@@ -18,7 +18,7 @@
       <img :src="photos[0]" alt="" class="side">
     </div>
     <div class="align-right">
-      <img :src="photos[2]" alt="" class="main">
+      <img :src="photos[1]" alt="" class="main">
       <p>
         Продакшн
         Работаем с разными задачами и бюджетами, предлагая варианты реализации
@@ -33,12 +33,8 @@ export default {
   data: function () {
     return {
       photos: [
-        'https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg',
-        './img/tmp/ABC_6995.JPG',
-        './img/tmp/ABC_6998.JPG',
-        './img/tmp/ABC_6996.JPG',
-        './img/tmp/ABC_7010.JPG',
-        './img/tmp/ABC_7023.JPG'
+        './img/custom/IMG_3198.jpg',
+        './img/custom/IMG_5345.jpg',
       ]
 
     }
@@ -65,8 +61,8 @@ export default {
   animation: rotateCircle 10s infinite linear;
   @media screen and (max-width: 771px) {
     & {
-      top: 100vh;
-      right: 40px;
+      top: 200px;
+      right: 60px;
     }
   }
 }
@@ -144,6 +140,8 @@ export default {
 
     @media screen and (max-width: 771px) {
       & {
+        position: relative;
+        z-index: 10;
         width: 80%;
         height: 410px;
         margin-left: $gridGap770;

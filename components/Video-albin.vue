@@ -1,6 +1,6 @@
 <template>
   <section class="video">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
+    <iframe src="https://www.youtube.com/embed/89DSi6Ofdno" title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen/>

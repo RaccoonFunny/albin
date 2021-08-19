@@ -5,25 +5,25 @@
     <div class="content row">
       <div class="sidebar">
         <ul>
-          <li @click="changeActive('chosenPhoto')" id="chosen_photo" :class="status.chosenPhoto ?'active':''"><span>Избранные фото</span>
+          <li @click="changeActive('chosenPhoto')" id="chosen_photo" :class="status.chosenPhoto ?'active':''"><span>Фотопортфолио</span>
           </li>
-          <li @click="changeActive('chosenVideo')" id="chosen_video" :class="status.chosenVideo ?'active':''"><span>Избранные видео</span>
+          <li @click="changeActive('chosenVideo')" id="chosen_video" :class="status.chosenVideo ?'active':''"><span>Видеопортфолио</span>
           </li>
           <li @click="changeActive('ads')" id="ads" :class="status.ads ?'active':''"><span>Рекламные ролики</span></li>
           <li @click="changeActive('teaser')" id="teaser" :class="status.teaser ?'active':''"><span>Тизеры</span></li>
-          <li @click="changeActive('reportage')" id="reportage" :class="status.reportage ?'active':''"><span>Репортажные сьемки</span>
+          <li @click="changeActive('reportage')" id="reportage" :class="status.reportage ?'active':''"><span>Корпоративы и вечеринки</span>
           </li>
           <li @click="changeActive('marriage')" id="marriage" :class="status.marriage ?'active':''"><span>Свадебные сьемки</span>
           </li>
         </ul>
       </div>
       <div class="promo">
-        <div v-if="status.chosenPhoto" class="photo">
-          <img :src="photos[2]" alt="" class="main">
-          <img :src="photos[4]" alt="" class="side">
-          <img :src="photos[0]" alt="" class="side">
+        <div v-if="activeType == 'photo'" class="photo">
+          <img :src="photos[active][0]" alt="" class="main">
+          <img :src="photos[active][1]" alt="" class="side">
+          <img :src="photos[active][2]" alt="" class="side">
         </div>
-        <div v-if="!status.chosenPhoto" class="video">
+        <div v-if="activeType == 'video' " class="video">
           <iframe height="560" :src="video[active]" title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen/>
@@ -40,37 +40,48 @@ export default {
   data: function () {
     return {
       active: 'chosenPhoto',
+      activeType: 'photo',
       status: {
         chosenPhoto: true,
         chosenVideo: false,
         ads: false,
         teaser: false,
         reportage: false,
-        marriage: false
+        marriage: false,
       },
       video: {
-        chosenVideo: 'https://www.youtube.com/embed/k85mRPqvMbE',
-        ads: 'https://www.youtube.com/embed/uelHwf8o7_U',
-        teaser: "https://www.youtube.com/embed/IcrbM1l_BoI",
-        reportage: 'https://www.youtube.com/embed/zRIbf6JqkNc',
-        marriage: 'https://www.youtube.com/embed/ZaI2IlHwmgQ'
+        chosenVideo: 'https://www.youtube.com/embed/DzrFit3OW8Q',
+        ads: 'https://www.youtube.com/embed/PwBH-ly9gsY',
+        teaser: "https://www.youtube.com/embed/SRDFEx7rpFc",
       },
-      photos: [
-        'https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg',
-        './img/tmp/ABC_6995.JPG',
-        './img/tmp/ABC_6998.JPG',
-        './img/tmp/ABC_6996.JPG',
-        './img/tmp/ABC_7010.JPG',
-        './img/tmp/ABC_7023.JPG'
-      ]
-
+      photos: {
+        chosenPhoto: ["./img/custom/14.jpg", "./img/custom/FtlybgonSb0.jpeg", "./img/custom/pm0RB4ZoZhs.jpg"],
+        reportage: ["./img/funny/5YxNCXE1Ofs.jpeg", "./img/funny/7R205508.jpg", "./img/funny/7R205839.jpg"],
+        marriage: ["./img/marriage/7R204403.jpg", "./img/marriage/7R208496.jpg", "./img/marriage/IMG_2488.jpeg"],
+        chosenVideo: '',
+        ads: '',
+        teaser: "",
+      }
     }
   },
   methods: {
     changeActive: function (message) {
-      this.status[message] = true;
+      switch (message) {
+        case "chosenPhoto":
+        case "reportage":
+        case "marriage":
+          this.activeType = "photo";
+          console.log('photo')
+          break;
+        default:
+          console.log("video")
+          this.activeType = "video";
+      }
+
       this.status[this.active] = false;
+      this.status[message] = true;
       this.active = message;
+
     }
   },
 }
@@ -221,6 +232,7 @@ hr {
 
     .video {
       width: 100%;
+
       iframe {
         width: 100%;
         height: 560px;

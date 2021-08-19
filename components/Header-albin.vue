@@ -70,6 +70,15 @@ export default {
   background: $black;
   width: 100%;
   z-index: 11;
+  top: 0;
+  left: 0;
+
+  @media screen and (max-width: 771px) {
+    & {
+      width: calc(100% - 40px);
+      padding: 10px;
+    }
+  }
 
   .logo {
     margin-right: 92px;

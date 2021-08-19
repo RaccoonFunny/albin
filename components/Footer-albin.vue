@@ -56,7 +56,7 @@ export default {
     padding: 75px 0 85px;
   }
 
-  .site-links li, .social-links li, .feedback li {
+  .site-links li, .social-links li, .feedback li, .feedback a{
     margin-bottom: 40px;
 
     @media screen and (max-width: 771px) {

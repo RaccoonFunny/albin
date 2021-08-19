@@ -20,7 +20,7 @@
         </button>
         <div class="row">
 
-          <img :src="'./img/tmp/angelua.jpg'" alt="" class="under-btn">
+          <img :src="'./img/custom/7R202249.jpg'" alt="" class="under-btn">
 
           <div class="carousel-arrows">
             <p class="counter">
@@ -55,7 +55,7 @@ export default {
   data: function () {
     return {
       current: '1',
-      giant: ['https://kikimoraki.ru/wp-content/uploads/2020/09/gde-mozhno-nalozhit-krasnyj-filtr-neskolko-sposobov-3-700x1244.jpg','./img/tmp/ABC_6995.JPG',"./img/tmp/ABC_6998.JPG","./img/tmp/ABC_6996.JPG","./img/tmp/ABC_7010.JPG", "./img/tmp/ABC_7023.JPG"]
+      giant: ['./img/custom/7R202501.jpg','./img/custom/7R202603.jpg',"./img/custom/_DSC0544.jpg","./img/custom/e2YJnAPO46I.jpeg","./img/custom/IMG_3101.jpg", "./img/custom/IMG_6111.jpg"]
     }
   },
   computed: {
@@ -95,7 +95,7 @@ export default {
 
   @media screen and (max-width: 776px) {
     & {
-      right: 50px;
+      right: 60px;
       top: 80%;
     }
   }

@@ -45,13 +45,14 @@ export default {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 771px) {
   * {
     font-size: 14px;
   }
 
   .wrapper {
-    width: 340px;
+    width: 100%;
+    padding: 0 10px;
     margin: 0 auto;
   }
 }
